@@ -1,0 +1,30 @@
+.preview__title {
+  @include fonts(36px, 36px, 400);
+  @include margin-text(25px);
+  font-family: $font-secondary;
+  text-align: center;
+  color: $basic-white;
+}
+
+.preview__description {
+  @include fonts(14px, 14px, 400);
+  @include margin-text(0);
+  font-family: $font-secondary;
+  text-align: center;
+  color: $basic-white;
+}
+
+.preview__wrapper {
+  @include background-gradient(url("../../images/preview-background-cat.jpg"));
+  min-height: 302px;
+  padding-top: 27px;
+}
+
+.preview__select-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.preview {
+  margin-bottom: 20px;
+}

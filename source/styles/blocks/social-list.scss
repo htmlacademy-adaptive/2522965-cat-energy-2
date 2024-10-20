@@ -1,0 +1,47 @@
+.social-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $background-color-primary;
+  padding: 40px 20px;
+}
+
+.social-list-wrapper img {
+  margin-bottom: 20px;
+}
+
+.social-list {
+  @include reset-list;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  gap: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid $border-secondary;
+  border-bottom: 1px solid $border-secondary;
+  margin-bottom: 20px;
+}
+
+
+.social-list__item-button {
+  display: block;
+  width: 28px;
+  height: 20px;
+}
+
+.social-list__item-button--vk {
+  @include background-image(url("../../icons/social-button-vk.svg"), no-repeat, 27px 17px);
+  background-position: center;
+}
+
+.social-list__item-button--youtube {
+  @include background-image(url("../../icons/social-button-youtube.svg"), no-repeat, 24px 18.5px);
+  background-position: center;
+}
+
+.social-list__item-button--tg {
+  @include background-image(url("../../icons/social-button-tg.svg"), no-repeat, 19.5px 17px);
+  background-position: center;
+}

@@ -1,1 +1,38 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $basic-white;
+  font-size: 14px;
+  line-height: 18px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  color: $basic-black;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: $basic-black;
+  text-decoration: none;
+}
+
+.button {
+  @include fonts(16px,20px,400);
+  font-family: $font-secondary;
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $base-background-color;
+  color: $basic-white;
+  text-transform: uppercase;
+  text-align: center;
+}

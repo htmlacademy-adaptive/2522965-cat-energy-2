@@ -1,0 +1,65 @@
+.catalog-layout__title {
+  @include fonts(36px,36px,400);
+  @include margin-text(0);
+  font-family: $font-secondary;
+  padding: 27px 20px 41px;
+  border-top: 1px solid $border-secondary;
+  border-bottom: 1px solid $border-secondary;
+}
+
+.catalog-layout__list {
+  @include reset-list;
+}
+
+.catalog-layout__item {
+  padding: 20px 20px 24px;
+  border-bottom: 1px solid $border-secondary;
+}
+
+.catalog-layout__item-title {
+  @include fonts(16px,20px,400);
+  @include margin-text(14px);
+  font-family: $font-secondary;
+  text-transform: uppercase;
+}
+
+.catalog-layout__item-description-wrapper {
+  @include fonts(16px,20px,400);
+  @include margin-text(17px);
+  color: $base-color-text;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: max-content auto;
+  margin-bottom: 21px;
+}
+
+.catalog-layout__item-description-wrapper dd {
+  margin-left: auto;
+}
+
+.catalog-layout__item--additional {
+  @include background-image(url("../../icons/more-cards-icon.svg"), no-repeat, 30px 30px);
+  background-position: top center;
+  padding-top: 53px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.catalog-layout__item-description--additional {
+  @include fonts(12px,16px,400);
+  @include margin-text (21px);
+  color: $base-color-text;
+}
+
+.catalog-layout__item-title--additional {
+  @include margin-text (8px);
+}
+
+.catalog-layout__item-button-additional {
+  color: $base-color-text;
+  background-color: $background-color-primary;
+}
+
+.catalog-layout {
+  margin-bottom: 25px;
+}

@@ -1,0 +1,29 @@
+.contacts-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 26px 20px;
+}
+
+.contacts__title {
+  @include fonts(16px,20px,400);
+  @include margin-text(0);
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.contacts__description {
+  @include fonts(14px,20px,400);
+  @include margin-text(0);
+  font-style: normal;
+}
+
+.contacts__map-wrapper {
+  @include background-image (url("../../images/background-map-save.jpg"), no-repeat, cover);
+  min-height: 362px;
+  min-width: 320px;
+}
+
+.contacts-wrapper--catalog {
+  background-color: $background-color-primary;
+}

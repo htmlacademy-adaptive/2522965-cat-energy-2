@@ -1,0 +1,16 @@
+.copyright {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright__title {
+  @include fonts(16px,20px,400);
+  @include margin-text(0);
+  color: $base-color-text;
+}
+
+.copyright img {
+  margin-bottom: 0;
+}

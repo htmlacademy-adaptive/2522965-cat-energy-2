@@ -1,0 +1,35 @@
+.newsletter-catalog {
+  padding: 40px 20px;
+}
+
+.newsletter-catalog__title {
+  @include fonts(24px,24px,400);
+  @include margin-text(32px);
+  font-family: $font-secondary;
+}
+
+.newsletter-catalog__description {
+  @include fonts(16px,24px,400);
+  @include margin-text(24px);
+  font-family: $font-secondary;
+  text-align: center;
+}
+
+.newsletter-catalog__input {
+  @include fonts(20px,30px,400);
+  font-family: $font-secondary;
+  color: $base-color-text;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 13px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  border: 1px solid $border-third;
+}
+
+.newsletter-catalog__button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  outline: none;
+  border: none;
+}

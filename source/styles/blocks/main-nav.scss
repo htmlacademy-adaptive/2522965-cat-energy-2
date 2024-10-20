@@ -1,0 +1,93 @@
+.main-nav__link {
+  @include fonts(20px, 20px, 400);
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  display: inline-block;
+  padding-top: 22px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid $border-primary;
+  width: 100%;
+}
+
+.main-nav label {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: $basic-white;
+}
+
+.main-nav label::before,
+.main-nav label::after,
+.burger-toggle-decorate-border-center {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $basic-black;
+  transition: 0.3s;
+}
+
+.main-nav label::before {
+  content: "";
+  top: 2px;
+}
+
+.main-nav label::after {
+  content: "";
+  bottom: 4px;
+}
+
+.burger-toggle-decorate-border-center {
+  top: 10px;
+}
+
+.burger-toggle:checked ~ label::after {
+  transform: rotate(45deg);
+  bottom: 10px;
+}
+
+.burger-toggle:checked ~ label::before {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+
+.burger-toggle:checked ~ label .burger-toggle-decorate-border-center {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+
+.burger-toggle:checked ~ .main-nav__list {
+  transform: scale(1, 1);
+}
+
+.burger-toggle {
+  display: none;
+}
+
+.main-nav__list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  position: absolute;
+  right: 0;
+  top: 65px;
+  width: 100%;
+  z-index: 5;
+  transform: scale(1, 0);
+  transform-origin: top center;
+}
+
+.main-nav__item {
+  background-color: $basic-white;
+  text-align: center;
+  width: 100%;
+}
+
+.main-nav__link:first-child {
+  display: inline-block;
+  padding-top: 22px;
+  padding-bottom: 23px;
+  border-top: 1px solid $border-primary;
+  width: 100%;
+}

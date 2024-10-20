@@ -1,0 +1,44 @@
+.blog-article__title {
+  @include fonts(24px,37px,400);
+  @include margin-text(29px);
+  font-family: $font-secondary;
+  text-transform: uppercase;
+}
+
+.blog-article__description {
+  @include fonts(16px,24px,400);
+  @include margin-text(15);
+  color: $base-color-text;
+  padding-bottom: 23px;
+  border-bottom: 1px solid $border-secondary;
+}
+
+.blog-article__button {
+  @include fonts(16px,16px,400);
+  @include margin-text(0);
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.blog-article__button::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 10px;
+  background: url("../../icons/blog-icon-arrow.svg");
+  right: -47px;
+  top: 7px;
+}
+
+
+.blog-article {
+  margin-bottom: 20px;
+  background-color: $background-color-primary;
+  padding: 30px 20px 18px;
+}
+
+.blog-article-wrapper {
+  padding: 0 20px;
+}
