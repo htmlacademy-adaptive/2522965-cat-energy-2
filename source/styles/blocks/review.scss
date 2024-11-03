@@ -1,49 +1,162 @@
 .review {
-  padding: 25px 20px 20px;
-  background-color: $background-color-secondary;
+  background: $background-color-secondary;
+
+  @media (min-width: $width-tablet) {
+    background: $basic-white;
+    position: relative; /* родитель для бэкграунд цвета */
+    z-index: -1;
+
+    &::after {
+      content: "";  /* бэкграунд второй цвет */
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: $background-color-secondary;
+      height: 462px;
+      z-index: -2;
+    }
+  }
+}
+
+.review-container {
+  padding: 25px 20px 40px;
+  width: $width-mobile-content;
+  margin: 0 auto;
+
+  @media (min-width: $width-tablet) {
+    width: $width-tablet-content;
+    padding: 0 30px 101px;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop-content;
+    padding: 0 110px 75px;
+    position: relative; /* Для позиционирования слайдера */
+  }
 }
 
 .review__title {
-  @include fonts(36px, 40px, 400);
+  @include fonts(36px, 40px);
   @include margin-text(40px);
   font-family: $font-secondary;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(60px,60px);
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-bottom: 146px;
+    max-width: 436px;
+  }
 }
 
 .review__description {
-  @include fonts(14px,18px,400);
+  @include fonts(14px,18px);
   @include margin-text(20px);
   color: $base-color-text;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(16px,24px);
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: 436px;
+    margin-bottom: 69px;
+  }
 }
 
 .review__results-description {
-  @include fonts(24px,24px,400);
+  @include fonts(24px,24px);
   @include margin-text(0);
   font-family: $font-secondary;
   text-transform: uppercase;
+  padding-top: 14px;
+  padding-bottom: 8px;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(30px,37px);
+    padding-top: 15px;
+    padding-bottom: 11px;
+  }
 }
 
 .review__results-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-bottom: 20px;
+
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 162px 162px 1fr;
+    margin-bottom: 99px;
+    gap: 43px;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-template-columns: 162px 162px;
+    margin-bottom: 0;
+    gap: 55px 42px;
+  }
 }
 
 .review__results-title {
-  @include fonts(12px,12px,400);
+  @include fonts(12px,12px);
   color: $base-color-text;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 58px;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(14px,14px);
+    max-width: 100%;
+  }
 }
 
 .review__results {
   margin-left: 0;
   margin-right: 0;
   border: 1px solid $border-third;
+  text-align: center;
+  padding: 0;
+  border-radius: 3px;
+}
+
+.review__results,
+.review__results-description,
+.review__results-title {
+  transform: rotate(180deg);      /* Делаю тег ледженд снизу блока филдсета */
 }
 
 .review__amount {
-  @include fonts(14px,20px,400);
+  @include fonts(14px,20px);
   @include margin-text(0);
   font-family: $font-secondary;
   text-align: center;
   text-transform: uppercase;
+  grid-column: 1 / 3;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(20px,20px);
+    padding-top: 11px;
+    grid-column: 3 / 4;
+    max-width: 174px;
+    text-align: right;
+    margin-left: auto;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-column: 1 / 3;
+    max-width: none;
+    text-align: left;
+    margin-left: 0;
+  }
+}
+
+.review__amount span {
+  @media (min-width: $width-desktop) {
+    margin-left: 63px;
+  }
 }

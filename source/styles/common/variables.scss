@@ -1,13 +1,39 @@
-/* здесь используйте глобальные переменные */
+/* цвета */
 $basic-white: #ffffff;
 $basic-black: #000000;
 $base-color-text: #444444;
+$base-title-color-text: #222222;
 $base-background-color: #68b738;
 $background-color-primary: #f2f2f2;
 $background-color-secondary: #eaeaea;
-$font-secondary: "Oswald", sans-serif;
 $border-primary: #e6e6e6;
 $border-secondary: #d9d9d9;
 $border-third: #cdcdcd;
+$border-fourth: #ebebeb;
+$preview-green: #64a73d;
 
-/* Бэкграунд пикчи */
+/* шрифты */
+$font-secondary: "Oswald", sans-serif;
+
+/* Мейн брейкпоинты макета */
+$width-mobile: 320px;
+$width-tablet: 768px;
+$width-desktop: 1440px;
+
+/* Отступы от края вьюпорта */
+$width-mobile-padding: 20px;
+$width-tablet-padding: 30px;
+$width-desktop-padding: 110px;
+
+/* Размеры контент блока, созданные для резины сайта */
+$width-mobile-content: (
+  $width-mobile - 2 * $width-mobile-padding
+);
+
+$width-tablet-content: (
+  $width-tablet - 2 * $width-tablet-padding
+);
+
+$width-desktop-content: (
+  $width-desktop - 2 * $width-desktop-padding
+);

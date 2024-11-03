@@ -1,30 +1,124 @@
 .preview__title {
-  @include fonts(36px, 36px, 400);
+  @include fonts(36px, 36px);
   @include margin-text(25px);
   font-family: $font-secondary;
-  text-align: center;
   color: $basic-white;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(60px,60px);
+    margin-bottom: 40px;
+    color: $basic-black;
+    max-width: 425px;
+    margin-left: 90px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-left: 80px;
+  }
 }
 
 .preview__description {
-  @include fonts(14px, 14px, 400);
-  @include margin-text(0);
+  @include fonts(14px,14px);
+  @include margin-text(28px);
   font-family: $font-secondary;
-  text-align: center;
   color: $basic-white;
-}
+  text-transform: uppercase;
+  word-break: break-word;
 
-.preview__wrapper {
-  @include background-gradient(url("../../images/preview-background-cat.jpg"));
-  min-height: 302px;
-  padding-top: 27px;
-}
+  @media (min-width: $width-tablet) {
+    @include fonts(20px,20px);
+    margin-bottom: 50px;
+    color: $basic-black;
+    max-width: 425px;
+    margin-left: 90px;
+  }
 
-.preview__select-wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
+  @media (min-width: $width-desktop) {
+    margin-bottom: 52px;
+    margin-left: 80px;
+  }
 }
 
 .preview {
+  @include background-gradient-green(url("../../images/background/preview/preview-background-mobile@1x.jpg"));
+  background: {
+    position: center 0;
+    size: auto 302px;
+  }
+
+  color: $basic-white;
+  text-align: center;
   margin-bottom: 20px;
+
+  @media (min-resolution: 2dppx) {
+    @include background-gradient-green(url("../../images/background/preview/preview-background-mobile@2x.jpg"));
+    background: {
+      position: center 0;
+      size: auto 302px;
+    }
+  }
+
+  @media (min-width: $width-tablet) {
+    background: none;
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $width-desktop) {
+    position: relative; /* Задаю родителя для привязки бэкграунда псевдоэлементом */
+    background: none;
+    text-align: start;
+    margin-bottom: 82px;
+  }
+}
+
+.preview__wrapper {
+  padding-top: 27px;
+  width: $width-mobile-content;
+  margin: 0 auto;
+
+  @media (min-width: $width-tablet) {
+    position: relative;
+    padding: 0 0 526px;
+    width: $width-tablet-content;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding: 110px 0 184px;
+    width: $width-desktop-content;
+  }
+}
+
+.preview__image {
+  margin: 0 auto;
+
+  @media (min-width: $width-tablet) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 709px;
+    height: 609px;
+    z-index: -1;
+  }
+
+  @media (min-width: $width-desktop) {
+    top: 29px;
+    left: calc(50% - 162px);
+    width: 552px;
+    height: 500px;
+  }
+}
+
+.preview__select {
+  @media (min-width: $width-tablet) {
+    @include fonts(20px,26px);
+    width: auto;
+    padding: 14px 26px;
+    max-width: 425px;
+    margin-left: 90px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-left: 80px;
+  }
 }

@@ -1,5 +1,5 @@
 .main-nav__link {
-  @include fonts(20px, 20px, 400);
+  @include fonts(20px, 20px);
   text-transform: uppercase;
   font-family: $font-secondary;
   display: inline-block;
@@ -7,6 +7,28 @@
   padding-bottom: 23px;
   border-bottom: 1px solid $border-primary;
   width: 100%;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(18px,24px);
+    border-bottom: none;
+    white-space: nowrap;
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+
+  @media (min-width: $width-desktop) {
+    @include fonts(20px,30px);
+    padding-bottom: 10px;
+    color: $basic-white;
+  }
+}
+
+.main-nav__link:first-child {
+  border-top: 1px solid $border-primary;
+
+  @media (min-width: $width-tablet) {
+    border: none;
+  }
 }
 
 .main-nav label {
@@ -15,6 +37,10 @@
   width: 24px;
   height: 24px;
   background-color: $basic-white;
+
+  @media (min-width: $width-tablet) {
+    display: none;
+  }
 }
 
 .main-nav label::before,
@@ -76,18 +102,37 @@
   z-index: 5;
   transform: scale(1, 0);
   transform-origin: top center;
+
+  @media (min-width: $width-tablet) {
+    position: static;
+    top: 0;
+    transform: scale(1, 1);
+    flex-direction: row;
+    gap: 33px;
+  }
 }
 
 .main-nav__item {
   background-color: $basic-white;
   text-align: center;
   width: 100%;
+
+  @media (min-width: $width-desktop) {
+    background-color: transparent;
+  }
 }
 
-.main-nav__link:first-child {
-  display: inline-block;
-  padding-top: 22px;
-  padding-bottom: 23px;
-  border-top: 1px solid $border-primary;
-  width: 100%;
+.main-nav {
+  display: flex;
+
+  @media (min-width: $width-tablet) {
+    align-self: end;
+    margin-left: auto;
+  }
+}
+
+.main-nav__link--catalog {
+  @media (min-width: $width-desktop) {
+    color: $basic-black;
+  }
 }

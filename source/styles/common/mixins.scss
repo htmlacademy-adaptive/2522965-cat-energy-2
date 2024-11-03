@@ -1,3 +1,5 @@
+/* подключение шрифтов */
+
 @mixin font-face ($font-family, $font-weight, $font-style, $font-src) {
   @font-face {
     font-family: $font-family;
@@ -8,11 +10,32 @@
   }
 }
 
-@mixin fonts($font-size-text, $line-height-text, $font-weight-text) {
+@mixin fonts($font-size-text, $line-height-text) {
   font-size: $font-size-text;
   line-height: $line-height-text;
-  font-weight: $font-weight-text;
+  font-weight: 400;
 }
+
+/* классическое подключение бэкграунд изображения */
+
+@mixin background-image ($background-image, $background-repeat, $background-size) {
+  background-image: $background-image;
+  background-repeat: $background-repeat;
+  background-size: $background-size;
+}
+
+/*
+бэкграунд заливка пикчи:
+1. Идет поверхостная заливка над всеми слоями нужного цвета по макету
+2. Идет сама пикча
+3. Идет сейв бэкграунд градиент, схожий с темным бэкграундом самих изображений, созданный во избежание резкого перехода при растягивании страницы
+*/
+@mixin background-gradient-green ($background-gradient-image) {
+  background-image: linear-gradient(0deg, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), $background-gradient-image, linear-gradient(to right, rgba(81, 82, 86, 1), rgba(66, 65, 70, 1));
+  background-repeat: no-repeat;
+}
+
+/* reset миксины */
 
 @mixin reset-list {
   padding-left: 0;
@@ -24,19 +47,4 @@
 @mixin margin-text ($text-margin-bottom) {
   margin-top: 0;
   margin-bottom: $text-margin-bottom;
-}
-
-@mixin background-image ($background-image, $background-repeat, $background-size) {
-  background-image: $background-image;
-  background-repeat: $background-repeat;
-  background-size: $background-size;
-}
-
-@mixin background-gradient ($background-gradient-image) {
-  background: linear-gradient(0deg, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), $background-gradient-image;
-
-  background: {
-    repeat: no-repeat;
-    size: cover;
-  }
 }

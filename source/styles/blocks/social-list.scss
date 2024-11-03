@@ -5,10 +5,21 @@
   text-align: center;
   background-color: $background-color-primary;
   padding: 40px 20px;
+
+  @media (min-width: $width-tablet) {
+    padding: 55px 30px;
+    flex-direction: row;
+    text-align: start;
+    justify-content: space-between;
+  }
 }
 
 .social-list-wrapper img {
   margin-bottom: 20px;
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .social-list {
@@ -22,6 +33,13 @@
   border-top: 1px solid $border-secondary;
   border-bottom: 1px solid $border-secondary;
   margin-bottom: 20px;
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+    padding-left: 40px; /* центрирую иконки по макету в центр */
+  }
 }
 
 
