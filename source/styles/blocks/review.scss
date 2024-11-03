@@ -20,18 +20,18 @@
 }
 
 .review-container {
-  padding: 25px 20px 40px;
+  padding: 25px 0 40px;
   width: $width-mobile-content;
   margin: 0 auto;
 
   @media (min-width: $width-tablet) {
     width: $width-tablet-content;
-    padding: 0 30px 101px;
+    padding: 0 0 101px;
   }
 
   @media (min-width: $width-desktop) {
     width: $width-desktop-content;
-    padding: 0 110px 75px;
+    padding: 0 0 75px;
     position: relative; /* Для позиционирования слайдера */
   }
 }
@@ -107,7 +107,7 @@
   color: $base-color-text;
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 58px;
+  max-width: 85px;
 
   @media (min-width: $width-tablet) {
     @include fonts(14px,14px);

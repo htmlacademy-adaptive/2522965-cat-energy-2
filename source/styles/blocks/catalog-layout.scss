@@ -54,7 +54,7 @@
 
   /* убираю лишний предпоследний бордер при переключении разметки */
   /* 560px - вью порт, на котором появляется доп. свободная 2 колонка грида от свойства grid-template-columns: (auto fit) */
-  @media (min-width: 560px) {
+  @media (min-width: 640px) {
     &:nth-last-child(2) {
       border: none;
     }

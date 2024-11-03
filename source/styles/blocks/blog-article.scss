@@ -73,7 +73,6 @@
 }
 
 .blog-article-wrapper {
-  padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -83,7 +82,6 @@
   @media (min-width: $width-tablet) {
     width: $width-tablet-content;
     gap: 30px;
-    padding: 0 30px;
     margin-bottom: 45px;
   }
 
@@ -91,7 +89,6 @@
     width: $width-desktop-content;
     grid-template-columns: repeat(2, 570px);
     gap: 80px;
-    padding: 0 110px;
     margin-bottom: 71px;
   }
 }

@@ -3,13 +3,12 @@
   margin-bottom: 40px;
 
   @media (min-width: $width-tablet) {
-    padding: 0 68px;
     width: calc($width-tablet - 68px * 2);
     margin: 0 auto 80px;
+    padding: 0;
   }
 
   @media (min-width: $width-desktop) {
-    padding: 0 110px;
     width: $width-desktop-content;
     margin-bottom: 104px;
   }
@@ -23,6 +22,7 @@
   @media (min-width: $width-tablet) {
     @include fonts(32px,32px);
     margin-bottom: 66px;
+    margin-left: 2px;
   }
 
   @media (min-width: $width-desktop) {
