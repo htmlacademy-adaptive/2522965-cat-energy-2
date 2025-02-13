@@ -3,6 +3,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.2s;
+
+  &:hover .copyright__logo {
+    color: $base-background-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media (min-width: $width-tablet) {
     width: auto;
@@ -11,13 +20,14 @@
   }
 }
 
+.copyright__logo {
+  color: #666666;
+  transition: 0.2s;
+}
+
 .copyright__title {
   @include fonts(16px,20px);
   @include margin-text(0);
   color: $base-color-text;
   white-space: nowrap;
-}
-
-.copyright img {
-  margin-bottom: 0;
 }

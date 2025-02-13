@@ -55,7 +55,11 @@
   text-transform: uppercase;
   padding: 13px;
   box-sizing: border-box;
-  border: 1px solid $border-third;
+  border: 1px solid #e7e7e7;
+
+  &:hover {
+    border: 1px solid $border-third;
+  }
 }
 
 .newsletter-catalog__button {

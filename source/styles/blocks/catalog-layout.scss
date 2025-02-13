@@ -195,6 +195,15 @@
 .catalog-layout__item-button-additional {
   color: $base-color-text;
   background-color: $background-color-primary;
+
+  &:hover {
+    background-color: #ebebeb;
+  }
+
+  &:active {
+    color: #444444;
+    opacity: 0.8;
+  }
 }
 
 .catalog-layout {

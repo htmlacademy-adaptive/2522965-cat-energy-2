@@ -109,6 +109,7 @@
   border: 1px solid $border-third;
   border-radius: 3px;
   margin-bottom: 20px;
+  padding: 0;
 
   @media (min-width: $width-tablet) {
     margin-bottom: 99px;
@@ -121,7 +122,7 @@
 
 .review__results-description {
   @include fonts(24px,24px);
-  @include margin-text(0);
+  margin: 7px 0 15px;
   font-family: $font-secondary;
   text-align: center;
   text-transform: uppercase;
@@ -181,11 +182,87 @@
 .slider {
   width: fit-content;
   margin: 0 auto;
+  position: relative;
 
   @media (min-width: $width-desktop) {
     position: absolute;
     right: 0;
     top: 0;
     margin: 0;
+  }
+}
+
+.slider__before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 50%;
+  overflow: hidden;
+  background-color: $background-color-secondary;
+
+  @media (min-width: $width-tablet) {
+    background-color: transparent;
+  }
+}
+
+.slider__after {
+  position: relative;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.slide-progress {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: $border-fifth;
+  top: 0;
+  left: calc(50% - 2px);
+  z-index: 10;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $base-background-color;
+  }
+
+  &:hover .slide-progress-scroll {
+    border: 2px solid $base-background-color;
+  }
+
+  &:hover .slide-progress-scroll__angle {
+    border-right: 8px solid $base-background-color;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.slide-progress-scroll {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: calc(50% - 20px);
+  left: -18px;
+  border-radius: 50%;
+  background-color: $basic-white;
+  border: 2px solid $border-fifth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.2s;
+}
+
+.slide-progress-scroll__angle {
+  border: 9px solid transparent;
+  border-right: 8px solid $border-fifth;
+  transition: 0.2s;
+
+  &:nth-child(2) {
+    transform: rotate(180deg);
   }
 }

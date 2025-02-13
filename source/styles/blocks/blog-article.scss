@@ -10,8 +10,8 @@
 }
 
 .blog-article__description {
-  @include fonts(16px,24px);
-  @include margin-text(15px);
+  @include fonts(14px,18px);
+  @include margin-text(17px);
   color: $base-color-text;
   padding-bottom: 23px;
   border-bottom: 1px solid $border-secondary;
@@ -35,24 +35,66 @@
   font-family: $font-secondary;
   text-transform: uppercase;
   position: relative;
+  transition: 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 5px solid $background-color-primary;
+    border-left: 7px solid $basic-black;
+    top: calc(50% - 5px);
+    right: -44px;
+    transition: 0.3s;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: $basic-black;
+    top: calc(50% - 1px);
+    right: -33px;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      right: -52px;
+    }
+
+    &::before {
+      width: 26px;
+      right: -41px;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media (min-width: $width-tablet) {
     @include fonts(20px,30px);
-  }
-}
 
-.blog-article__button::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 24px;
-  height: 12px;
-  background: url("../../icons/blog-icon-arrow.svg");
-  right: -39px;
-  top: calc(50% - 6px);
+    &::after {
+      right: -54px;
+    }
 
-  @media (min-width: $width-tablet) {
-    right: -49px;
+    &::before {
+      right: -43px;
+    }
+
+    &:hover {
+      &::after {
+        right: -62px;
+      }
+
+      &::before {
+        right: -51px;
+      }
+    }
   }
 }
 

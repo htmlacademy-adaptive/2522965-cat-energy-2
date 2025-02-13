@@ -14,8 +14,18 @@
   }
 }
 
-.social-list-wrapper img {
+.social-list-wrapper__logo {
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 
   @media (min-width: $width-tablet) {
     margin-bottom: 0;
@@ -38,28 +48,27 @@
     margin-bottom: 0;
     border: none;
     padding: 0;
-    padding-left: 40px; /* центрирую иконки по макету в центр */
+    padding-left: 40px;
   }
 }
 
+.social-list__item-tg,
+.social-list__item-vk,
+.social-list__item-youtube {
+  color: #666666;
+  transition: 0.2s;
+
+  &:hover {
+    color: $base-background-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
 
 .social-list__item-button {
   display: block;
   width: 28px;
   height: 20px;
-}
-
-.social-list__item-button--vk {
-  @include background-image(url("../../icons/social-button-vk.svg"), no-repeat, 27px 17px);
-  background-position: center;
-}
-
-.social-list__item-button--youtube {
-  @include background-image(url("../../icons/social-button-youtube.svg"), no-repeat, 24px 18.5px);
-  background-position: center;
-}
-
-.social-list__item-button--tg {
-  @include background-image(url("../../icons/social-button-tg.svg"), no-repeat, 19.5px 17px);
-  background-position: center;
 }
