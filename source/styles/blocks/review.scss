@@ -21,6 +21,15 @@
   @media (min-width: $width-desktop) {
     &::after {
       background-color: $background-color-primary;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  @media (min-width: $width-desktop) {
+    &::after {
+      background-color: $background-color-primary;
     }
   }
 }
