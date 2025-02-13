@@ -30,6 +30,7 @@
   @media (min-width: $width-tablet) {
     grid-template-columns: repeat(auto-fit, 245px);
     gap: 77px 138px;
+    counter-reset: blockNum 0;
   }
 
   @media (min-width: $width-desktop) {
@@ -43,15 +44,31 @@
 
   @media (min-width: $width-tablet) {
     width: $width-tablet-content;
-    padding-bottom:47px;
+    padding-bottom: 47px;
     margin-bottom: 45px;
-    border-bottom: 1px solid $border-primary;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;/* потом внимание сюда, потенциально нужны коррективы */
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 1px;
+      background-color: $border-primary;
+      box-shadow: 100vh 0 0 0 $border-primary;
+    }
   }
 
   @media (min-width: $width-desktop) {
     width: $width-desktop-content;
     border: none;
     margin-bottom: 69px;
+
+    &::after {
+      height: 0;
+      width: 0;
+    }
   }
 }
 
@@ -61,6 +78,20 @@
   @media (min-width: $width-tablet) {
     padding: 111px 0 57px;
     background-size: 80px 80px;
+    counter-increment: blockNum;
+    position: relative;
+    /* бэкграунд счетчик списка */
+    &::after {
+      @include fonts(280px,280px);
+      content: counter(blockNum);
+      font-family: $font-secondary;
+      color: $background-color-primary;
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
   }
 }
 

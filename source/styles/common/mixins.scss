@@ -19,9 +19,11 @@
 /* классическое подключение бэкграунд изображения */
 
 @mixin background-image ($background-image, $background-repeat, $background-size) {
-  background-image: $background-image;
-  background-repeat: $background-repeat;
-  background-size: $background-size;
+  background: {
+    image: $background-image;
+    repeat: $background-repeat;
+    size: $background-size;
+  }
 }
 
 /*
