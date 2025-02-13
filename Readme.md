@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи»
 
 * Студент: [Валерьян Потехин](https://up.htmlacademy.ru/adaptive-individual/2/user/2522965).
-* Наставник: `Неизвестно`.
+* Наставник: `[Максим Боровик](https://htmlacademy.ru/profile/id1025673)`.
 
 ---
 

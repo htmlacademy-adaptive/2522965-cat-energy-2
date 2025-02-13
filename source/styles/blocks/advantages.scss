@@ -1,0 +1,120 @@
+.advantages__title {
+  @include fonts (36px,40px);
+  @include margin-text(40px);
+  font-family: $font-secondary;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(60px,60px);
+    margin-bottom: 72px;
+  }
+}
+
+.advantages__description {
+  @include fonts(14px,18px);
+  @include margin-text(0);
+  color: $base-color-text;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(16px,24px);
+  }
+}
+
+.advantages__list {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(60px, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+
+  @media (min-width: $width-tablet) {
+    grid-template-columns: repeat(auto-fit, 245px);
+    gap: 77px 138px;
+    counter-reset: blockNum 0;
+  }
+
+  @media (min-width: $width-desktop) {
+    gap: 79px;
+  }
+}
+
+.advantages {
+  width: $width-mobile-content;
+  margin: 0 auto 49px;
+
+  @media (min-width: $width-tablet) {
+    width: $width-tablet-content;
+    padding-bottom: 47px;
+    margin-bottom: 45px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;/* потом внимание сюда, потенциально нужны коррективы */
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 1px;
+      background-color: $border-primary;
+      box-shadow: 100vh 0 0 0 $border-primary;
+    }
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop-content;
+    border: none;
+    margin-bottom: 69px;
+
+    &::after {
+      height: 0;
+      width: 0;
+    }
+  }
+}
+
+.advantages__item {
+  padding: 2px 0 4px 80px;
+
+  @media (min-width: $width-tablet) {
+    padding: 111px 0 57px;
+    background-size: 80px 80px;
+    counter-increment: blockNum;
+    position: relative;
+    /* бэкграунд счетчик списка */
+    &::after {
+      @include fonts(280px,280px);
+      content: counter(blockNum);
+      font-family: $font-secondary;
+      color: $background-color-primary;
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.advantages__item:last-child {
+  margin-bottom: 0;
+}
+
+$advantages__item-count: 4;
+
+@for $i from 1 through $advantages__item-count {
+  .advantages__item:nth-child(#{$i}) {
+    @include background-image(url("../../images/background/advantages/advantages-background-mobile-#{$i}@1x.jpg"), no-repeat, 60px 60px);
+
+    @media (min-resolution: 2dppx) {
+      @include background-image(url("../../images/background/advantages/advantages-background-mobile-#{$i}@2x.jpg"), no-repeat, 60px 60px);
+    }
+
+    @media (min-width: 768px) {
+      @include background-image(url("../../images/background/advantages/advantages-background-tablet-#{$i}@1x.jpg"), no-repeat, 80px 80px);
+
+      @media (min-resolution: 2dppx) {
+        @include background-image(url("../../images/background/advantages/advantages-background-tablet-#{$i}@2x.jpg"), no-repeat, 80px 80px);
+      }
+    }
+  }
+}

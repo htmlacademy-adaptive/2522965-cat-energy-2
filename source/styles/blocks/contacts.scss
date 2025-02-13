@@ -1,0 +1,78 @@
+.contacts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, calc($width-mobile-content / 2));
+  padding: 26px 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 163px 163px;
+    padding: 61px 70px;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: 565px;
+    padding: 60px 78px 60px 80px;
+    position: absolute; /* размещаю внутри карты */
+    top: 95px;
+    left: 110px;
+    background-color: $basic-white;
+  }
+}
+
+.contacts__title {
+  @include fonts(16px,20px);
+  @include margin-text(0);
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-style: normal;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(20px,26px);
+  }
+}
+
+.contacts__description {
+  @include fonts(14px,20px);
+  @include margin-text(0);
+  font-style: normal;
+
+  @media (min-width: $width-tablet) {
+    @include fonts(16px,20px);
+    text-align: right;
+  }
+}
+
+.contacts__map-wrapper {
+  @include background-image (url("../../images/background/save-map-background/save-map-mobile@1x.jpg"), no-repeat, contain);
+  background-position: center 0;
+  height: 362px;
+  width: 100%;
+
+  @media (min-resolution: 2dppx) {
+    @include background-image (url("../../images/background/save-map-background/save-map-mobile@2x.jpg"), no-repeat, contain);
+  }
+
+  @media (min-width: $width-tablet) {
+    @include background-image (url("../../images/background/save-map-background/save-map-tablet@1x.jpg"), no-repeat, contain);
+    height: 400px;
+
+    @media (min-resolution: 2dppx) {
+      @include background-image (url("../../images/background/save-map-background/save-map-tablet@2x.jpg"), no-repeat, contain);
+    }
+  }
+
+  @media (min-width: $width-desktop) {
+    @include background-image (url("../../images/background/save-map-background/save-map-desktop@1x.jpg"), no-repeat, contain);
+  }
+}
+
+.contacts-wrapper--catalog {
+  background-color: $background-color-primary;
+}
+
+.contacts {
+  @media (min-width: $width-desktop) {
+    position: relative; /* создаю родителя для позиционирования адреса на самой карте */
+  }
+}

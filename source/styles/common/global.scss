@@ -1,1 +1,57 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: $basic-white;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  color: $basic-black;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: $basic-black;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.button {
+  @include fonts(16px,20px);
+  font-family: $font-secondary;
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $base-background-color;
+  color: $basic-white;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:hover {
+    background-color: #5eaa2f;
+    transition: 0.2s;
+  }
+
+  &:active {
+    background-color: #5eaa2f;
+    color: rgba(255, 255, 255, 0.3);
+    transition: 0.2s;
+  }
+}
