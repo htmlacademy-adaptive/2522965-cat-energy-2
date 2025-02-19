@@ -1,0 +1,22 @@
+.button {
+  @include fonts(16px,20px);
+  font-family: $font-secondary;
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px;
+  background-color: $base-background-color;
+  color: $basic-white;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:hover {
+    background-color: $base-background-color-hover;
+    transition: 0.2s;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: $base-background-color-hover;
+    transition: 0.2s;
+  }
+}

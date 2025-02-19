@@ -71,10 +71,12 @@
 .catalog-layout__item-title {
   @include fonts(16px,20px);
   @include margin-text(14px);
+  display: block;
   font-family: $font-secondary;
   text-transform: uppercase;
   max-width: 76px;
   color: $base-title-color-text;
+  transition: 0.3s;
 
   @media (min-width: $width-tablet) {
     @include fonts(20px,24px);
@@ -220,6 +222,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 
   @media (min-width: $width-tablet) {
     width: 200px;
@@ -240,4 +243,9 @@
   @media (min-width: $width-tablet) {
     grid-column: 1 / 2;
   }
+}
+
+.catalog-layout__item-image-wrapper:hover,
+.catalog-layout__item-title:hover {
+  transform: scale(1.05);
 }

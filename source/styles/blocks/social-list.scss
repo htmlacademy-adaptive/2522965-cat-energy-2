@@ -12,6 +12,10 @@
     text-align: start;
     justify-content: space-between;
   }
+
+  @media (min-width: $width-desktop) {
+    padding: 66px 110px;
+  }
 }
 
 .social-list-wrapper__logo {
