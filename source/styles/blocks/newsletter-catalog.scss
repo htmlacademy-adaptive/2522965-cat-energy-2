@@ -63,20 +63,17 @@
 }
 
 .newsletter-catalog__button {
+  @include fonts(20px,26px);
   padding-top: 15px;
   padding-bottom: 15px;
   outline: none;
   border: none;
-
-  @media (min-width: $width-tablet) {
-    @include fonts(20px,26px);
-  }
 }
 
 .newsletter-catalog__form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 16px;
 
   @media (min-width: $width-tablet) {
     grid-template-columns: 60% 40%;
